@@ -7,6 +7,15 @@ const URLS = Object.freeze({
 })
 
 class OpenNotify {
+  #get = async (url, toJson) => new Promise((resolve, reject) => {
+    http.get(url, async res => {
+      if (res.statusCode !== 200) {
+        reject(new Error(`Request Failed.\nStatus Code: ${statusCode}`))
+      }
+      res.on('data', buffer => resolve(toJson(buffer)))
+      res.on('error', reject)
+    }).on('error', reject)
+  })
 }
 
 module.exports = OpenNotify
