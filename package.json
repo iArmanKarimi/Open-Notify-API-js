@@ -1,0 +1,38 @@
+{
+  "name": "open-nofity-api",
+  "version": "1.0.0",
+  "description": "Open Nofity API client for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iArmanKarimi/Open-Nofity-API-js.git"
+  },
+  "keywords": [
+    "Open Nofity",
+    "Open Nofity API",
+    "People In Space",
+    "People In Space API",
+    "ISS location",
+    "ISS location API",
+    "API",
+    "API client",
+    "API wrapper",
+    "Open API"
+  ],
+  "author": "Arman Karimi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iArmanKarimi/Open-Nofity-API-js/issues"
+  },
+  "homepage": "https://github.com/iArmanKarimi/Open-Nofity-API-js#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "mocha": "^10.1.0"
+  }
+}
