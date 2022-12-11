@@ -49,6 +49,41 @@ class OpenNotify {
       date_time: new Date(data['timestamp'] * 1000)
     })
   })
+  /** Get the current number of people in space. It also returns the names and spacecraft those people are on.
+   * @example
+   * ```javascript
+    const api = new OpenNotify();
+    const peopleInSpace = await api.getPeopleInSpace()
+    console.log(`Printing ${peopleInSpace.number} people in space:`);
+    for (const { name, craft } of peopleInSpace.people) {
+      console.log(`name: ${name}, craft: ${craft}`);
+    }
+   * ```
+   * @returns {Promise} 
+   * ```json 
+   * {
+   * number: {number},
+    * message: {string},
+    * people: [
+    *   {
+    *    name: {string},
+    *    craft: {string},
+    *   },
+    *   ...
+    * ]
+   * }
+   * ```
+   */
+  getPeopleInSpace = async () => this.#get(URLS.ASTROS, buffer => {
+    let data
+    data = buffer.toString()
+    data = JSON.parse(data)
+    return Object.freeze({
+      message: data['message'],
+      number: data['number'],
+      people: data['people']
+    })
+  })
 }
 
 module.exports = OpenNotify
