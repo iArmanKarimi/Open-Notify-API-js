@@ -16,6 +16,39 @@ class OpenNotify {
       res.on('error', reject)
     }).on('error', reject)
   })
+  /** Gets the current location of ISS (International Space Station)
+   * @param 
+   * @example
+   * ```javascript
+    const api = new OpenNotify();
+    const iss_location = await api.getISSLocation()
+    console.log(
+      'ISS location:\n' +
+      `latitude: ${iss_location.latitude}\n` +
+      `longitude: ${iss_location.longitude}`
+    )
+   * ```
+   * @returns {Promise}
+   * ```json
+   * {
+   *    message: {string},
+   *    latitude: {number},
+   *    longitude: {number},
+   *    date_time: {Date},
+   * }
+   * ```
+   */
+  getISSLocation = async () => this.#get(URLS.ISS_NOW, buffer => {
+    let data
+    data = buffer.toString()
+    data = JSON.parse(data)
+    return Object.freeze({
+      message: data['message'],
+      latitude: data['iss_position']['latitude'],
+      longitude: data['iss_position']['longitude'],
+      date_time: new Date(data['timestamp'] * 1000)
+    })
+  })
 }
 
 module.exports = OpenNotify
