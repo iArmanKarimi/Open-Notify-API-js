@@ -12,7 +12,9 @@ class OpenNotify {
       if (res.statusCode !== 200) {
         reject(new Error(`Request Failed.\nStatus Code: ${statusCode}`))
       }
-      res.on('data', buffer => resolve(toJson(buffer)))
+      let data = ""
+      res.on('data', buffer => data += buffer)
+      res.on('end', () => resolve(toJson(data)))
       res.on('error', reject)
     }).on('error', reject)
   })
