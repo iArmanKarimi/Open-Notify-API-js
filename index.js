@@ -39,9 +39,7 @@ class OpenNotify {
    * }
    * ```
    */
-  static getISSLocation = async () => this.#get(URLS.ISS_NOW, buffer => {
-    let data
-    data = buffer.toString()
+  static getISSLocation = async () => this.#get(URLS.ISS_NOW, data => {
     data = JSON.parse(data)
     return Object.freeze({
       message: data['message'],
@@ -74,9 +72,7 @@ class OpenNotify {
    * }
    * ```
    */
-    static getPeopleInSpace = async () => this.#get(URLS.ASTROS, buffer => {
-    let data
-    data = buffer.toString()
+  static getPeopleInSpace = async () => this.#get(URLS.ASTROS, data => {
     data = JSON.parse(data)
     return Object.freeze({
       message: data['message'],
