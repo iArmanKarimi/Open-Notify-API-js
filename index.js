@@ -7,7 +7,7 @@ const URLS = Object.freeze({
 })
 
 class OpenNotify {
-  #get = async (url, toJson) => new Promise((resolve, reject) => {
+  static #get = async (url, toJson) => new Promise((resolve, reject) => {
     http.get(url, async res => {
       if (res.statusCode !== 200) {
         reject(new Error(`Request Failed.\nStatus Code: ${statusCode}`))
@@ -22,8 +22,7 @@ class OpenNotify {
    * @param 
    * @example
    * ```javascript
-    const api = new OpenNotify();
-    const iss_location = await api.getISSLocation()
+    const iss_location = await OpenNotify.getISSLocation()
     console.log(
       'ISS location:\n' +
       `latitude: ${iss_location.latitude}\n` +
@@ -40,7 +39,7 @@ class OpenNotify {
    * }
    * ```
    */
-  getISSLocation = async () => this.#get(URLS.ISS_NOW, buffer => {
+  static getISSLocation = async () => this.#get(URLS.ISS_NOW, buffer => {
     let data
     data = buffer.toString()
     data = JSON.parse(data)
@@ -54,8 +53,7 @@ class OpenNotify {
   /** Get the current number of people in space. It also returns the names and spacecraft those people are on.
    * @example
    * ```javascript
-    const api = new OpenNotify();
-    const peopleInSpace = await api.getPeopleInSpace()
+    const peopleInSpace = await OpenNotify.getPeopleInSpace()
     console.log(`Printing ${peopleInSpace.number} people in space:`);
     for (const { name, craft } of peopleInSpace.people) {
       console.log(`name: ${name}, craft: ${craft}`);
@@ -76,7 +74,7 @@ class OpenNotify {
    * }
    * ```
    */
-  getPeopleInSpace = async () => this.#get(URLS.ASTROS, buffer => {
+    static getPeopleInSpace = async () => this.#get(URLS.ASTROS, buffer => {
     let data
     data = buffer.toString()
     data = JSON.parse(data)
