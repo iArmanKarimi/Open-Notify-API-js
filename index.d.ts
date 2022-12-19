@@ -1,6 +1,6 @@
 interface ISSLocation {
     message: string
-    position: {
+    iss_position: {
         latitude: number
         longitude: number
     }

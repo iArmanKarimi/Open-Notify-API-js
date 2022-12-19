@@ -1,7 +1,7 @@
 {
-  "name": "open-nofity-api",
+  "name": "open-notify-api",
   "version": "1.0.0",
-  "description": "Open Nofity API client for javascript",
+  "description": "Open Notify API client for javascript",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iArmanKarimi/Open-Nofity-API-js.git"
+    "url": "git+https://github.com/iArmanKarimi/Open-Notify-API-js.git"
   },
   "keywords": [
-    "Open Nofity",
-    "Open Nofity API",
+    "Open Notify",
+    "Open Notify API",
     "People In Space",
     "People In Space API",
     "ISS location",
@@ -26,11 +26,10 @@
   "author": "Arman Karimi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iArmanKarimi/Open-Nofity-API-js/issues"
+    "url": "https://github.com/iArmanKarimi/Open-Notify-API-js/issues"
   },
-  "homepage": "https://github.com/iArmanKarimi/Open-Nofity-API-js#readme",
+  "homepage": "https://github.com/iArmanKarimi/Open-Notify-API-js#readme",
   "dependencies": {
-    "fs": "^0.0.1-security",
     "http": "^0.0.1-security"
   },
   "devDependencies": {
