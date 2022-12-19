@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/iArmanKarimi/Open-Nofity-API-js#readme",
   "dependencies": {
-    "fs": "^0.0.1-security",
     "http": "^0.0.1-security"
   },
   "devDependencies": {
