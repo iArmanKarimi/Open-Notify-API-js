@@ -1,4 +1,3 @@
-const fs = require('fs')
 const http = require('http'); // server doesn't support https
 
 const URLS = Object.freeze({
@@ -19,7 +18,6 @@ class OpenNotify {
     }).on('error', reject)
   })
   /** Gets the current location of ISS (International Space Station)
-   * @param 
    * @example
    * ```javascript
     const iss_location = await OpenNotify.getISSLocation()
