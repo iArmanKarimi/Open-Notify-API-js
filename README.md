@@ -39,6 +39,12 @@ console.log(
 );
 ```
 
+## References
+
+[Open Notify Website](http://open-notify.org/)
+
+[Official API documentation](http://open-notify.org/Open-Notify-API/)
+
 ## License
 
 [MIT](https://github.com/iArmanKarimi/Open-Notify-API-js/blob/main/LICENSE)
